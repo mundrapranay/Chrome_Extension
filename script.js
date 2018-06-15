@@ -1,4 +1,10 @@
+/*
+*   Author : Pranay Mundra
+*   Version : 1.0.0
+*   Chrome Quotes Extension
+* */
 (function () {
+    // information for each quote is stored in the format "Author" : ["Quote", "Image URL"]
     const info = {
         "Vir Das": ["Show the universe and, more importantly, yourself that this moment\ndoesn't own you, you own this moment.",
             "https://i0.wp.com/www.virdas.in/wp-content/uploads/2017/12/2dea30edd30c11549db61107db670f07d5f287a0.jpg?fit=1280%2C720&ssl=1"],
@@ -44,6 +50,7 @@
             "https://techcrunch.com/wp-content/uploads/2015/11/180221810.jpg"]
     };
     const authors = Object.keys(info);
+    // returns a random number according to the arr length to choose an author
     function chooseOne(arr) {
         return Math.floor(Math.random() * arr.length);
     }
