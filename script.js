@@ -47,7 +47,11 @@
             "you spend alone at night, thinking and thinking about what it is you want to design or build.",
             "https://www.usfca.edu/sites/default/files/styles/lightboxmax/public/news/woz2.jpg?itok=cCbGcbpa"],
         "Tim Cook" : ["Life is fragile. We\'re not guaranteed a tomorrow so give it everything you\'ve got.",
-            "https://techcrunch.com/wp-content/uploads/2015/11/180221810.jpg"]
+            "https://techcrunch.com/wp-content/uploads/2015/11/180221810.jpg"],
+        "Walter White, Breaking Bad" : ["I am the one who knocks.",
+            "https://wallpaperbrowse.com/media/images/Breaking-Bad-Wallpaper-5AF.png"],
+        "Monica, FRIENDS" : ["Welcome to the real world. It sucks. You\'re gonna love it.",
+            "https://i.ytimg.com/vi/-UQH5H4zjhg/maxresdefault.jpg"]
     };
     const authors = Object.keys(info);
     // returns a random number according to the arr length to choose an author
@@ -56,6 +60,7 @@
     }
     window.onload = function () {
         let randomNumber = chooseOne(authors);
+        // let randomNumber = 20;
         let randomImage = info[authors[randomNumber]][1];
         let randomQuote = info[authors[randomNumber]][0];
         document.getElementById('background-image').style.backgroundImage = 'url("'+ randomImage +'")';
