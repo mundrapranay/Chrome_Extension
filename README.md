@@ -5,7 +5,7 @@ ___
 ### Author : Pranay Mundra
 
 ## To install
-* clone the repositiory
+* clone the repository or downlaod the repository
 * open chrome://extensions
 * turn on developer mode
 * click on Load Unpacked
