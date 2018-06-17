@@ -5,6 +5,7 @@
 * */
 (function () {
     // information for each quote is stored in the format "Author" : ["Quote", "Image URL"]
+    // ToDO : Use either MongoDB or MySQLDB to store evreything online
     const info = {
         "Vir Das": ["Show the universe and, more importantly, yourself that this moment\ndoesn't own you, you own this moment.",
             "https://i0.wp.com/www.virdas.in/wp-content/uploads/2017/12/2dea30edd30c11549db61107db670f07d5f287a0.jpg?fit=1280%2C720&ssl=1"],
@@ -51,16 +52,45 @@
         "Walter White, Breaking Bad" : ["I am the one who knocks.",
             "https://wallpaperbrowse.com/media/images/Breaking-Bad-Wallpaper-5AF.png"],
         "Monica, FRIENDS" : ["Welcome to the real world. It sucks. You\'re gonna love it.",
-            "https://i.ytimg.com/vi/-UQH5H4zjhg/maxresdefault.jpg"]
+            "https://i.ytimg.com/vi/-UQH5H4zjhg/maxresdefault.jpg"],
+        "Albert Einstein" : ["Strive not to be a success, but rather to be of a value",
+            "http://www.waveridercommunications.com/wp-content/uploads/2016/11/albert-einstein-wallpaper-4.jpg"],
+        "Michael Jordan" : ["I\'ve missed more than 9000 shots in my career. I've almost lost 300 games.\n26 times I\'ve been" +
+            " trusted to take the game winning shot and missed. I\'ve failed over and over and over again in my life.\nAnd that is why I succeed",
+            "http://sportsmockery.com/wp-content/uploads/2015/03/1-6-limited-edition-real-masterpiece-michael-jordan-series-1-im-back-by-enterbay-1.jpg"],
+        "John Lennon" : ["Life is what happens to you while you\'re busy making other plans." ,
+            "https://wallpapercave.com/wp/MOUJbbF.jpg"],
+        "Buddha" : ["The mind is everything. What you think you become.",
+            "http://patnabeats.com/wp-content/uploads/2016/05/Gautam-buddha.jpg"],
+        "Christopher Columbus" : ["You can never cross the ocean until you have the courage to lose sight of the shore.",
+            "https://i.ytimg.com/vi/Q2-0w0YrsfA/maxresdefault.jpg"],
+        "Frank Sinatra" : ["The best revenge is massive success.",
+            "http://cdn.ppcorn.com/us/wp-content/uploads/sites/14/2015/12/Frank-Sinatra-pop-art-2016-ppcorn-2.jpg"],
+        "Theodre Roosevelt" : ["Believe you can and you\'re halfway there.",
+            "https://www.biography.com/.image/t_share/MTQ1MjUwNjM4Mzc5MzYxNjg4/theodore-roosevelt---sagamore-hill.jpg"],
+        "Yoda, Star Wars" : ["Do or do not. There is no try.",
+            "https://cdnb.artstation.com/p/assets/images/images/002/551/441/large/jean-paul-ear-wip25.jpg?1463004324"],
+        "Henry Ford" : ["When everything seems to be going against you, remember that the \nairplane takes off against the wind, not with it.",
+            "http://image.pbs.org/video-assets/pbs/american-experience/68423/images/Mezzanine_190.jpg"],
+        "Charles Swindoll" : ["Life is 10% what happens to me and 90% how I react to it.", "" +
+            "https://i.ytimg.com/vi/SQB4lJ2qEGY/maxresdefault.jpg"],
+        "Eleanor Roosevelt" : ["To handle yourself, use your head; to handle others, use your heart.",
+            "http://www.bespokerecords.com/wp-content/uploads/2017/02/head-vs-heart-1288x724.jpg"],
+        "Rosa Parks" : ["I have learned over the years that when one\'s mind is made up, this diminishes fear.",
+            "https://www.stackmagazines.com/admin/wp-content/uploads/2017/04/Rosa-Park.jpg"],
+        "Robin Williams" : ["I used to think the worst thing in life was to end up all alone, it\'s not. The worst thing in life is to end up " +
+            "with poeple that make you feel all alone.",
+            "https://www.infobae.com/new-resizer/nSNvYyVC54DwSt58qjngCaz4zIM=/1200x0/filters:quality(100)/s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2017/06/12205915/robin-williams.jpg"],
+        "Ed Sheeran" : ["I don\'t really do that whole \'single life \' thing. I\'m kind of heads down and get things down.",
+            "http://collarts.edu.au/wp-content/uploads/2018/02/Ed-Sheeran-Press-Photo-2-Credit-Mark-Surridge.jpg"]
     };
     const authors = Object.keys(info);
-    // returns a random number according to the arr length to choose an author
+    // returns a random number according to the arr length
     function chooseOne(arr) {
         return Math.floor(Math.random() * arr.length);
     }
     window.onload = function () {
         let randomNumber = chooseOne(authors);
-        // let randomNumber = 20;
         let randomImage = info[authors[randomNumber]][1];
         let randomQuote = info[authors[randomNumber]][0];
         document.getElementById('background-image').style.backgroundImage = 'url("'+ randomImage +'")';
